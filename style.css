@@ -128,14 +128,42 @@ text-decoration: none;
             margin: 0 10px;
         }
 
-        .card {
-            background: white;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            margin-bottom: 30px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden; 
+}
+
+.card-updating::before {
+    content: "ĐANG SỬA CHỮA";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 50px;
+    font-weight: 700;
+    color: rgba(255, 0, 0, 0.5);
+    text-transform: uppercase;
+    z-index: 22;
+}
+
+.card-updating::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 11;
+}
+
 
         .card:hover {
             transform: translateY(-5px);
@@ -390,18 +418,6 @@ text-decoration: none;
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            border-top: 1px solid var(--light-gray);
-            color: var(--gray);
-            font-size: 0.9rem;
-            background-color: white;
-            border-radius: 15px;
-            padding: 20px;
-
         }
 
         .progress-bar {
