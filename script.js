@@ -249,3 +249,11 @@
             // Thêm ví dụ mẫu
             dnaInput.value = "ATGCGTACGTAA";
         });
+// go back
+            function goBack() {
+      if (history.length > 1) {
+        history.back();
+      } else {
+        location.href = 'https://biology.4devvn.com/baihoc';
+      }
+    }
